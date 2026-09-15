@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HomeTileButton">
+        <attr name="tile_title" format="string" />
+        <attr name="tile_des" format="string" />
+        <attr name="tile_icon" format="reference" />
+        <attr name="tile_lip_color" format="color" />
+        <attr name="tile_icon_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="HomeLinearTileButton" >
+        <attr name="linear_tile_title" format="string" />
+        <attr name="linear_tile_icon" format="reference" />
+        <attr name="tile_StartColor" format="color" />
+        <attr name="tile_EndColor" format="color" />
+        <attr name="tile_angle" format="integer"/>
+        <attr name="icon_tint" format="color"/>
+    </declare-styleable>
+</resources>
