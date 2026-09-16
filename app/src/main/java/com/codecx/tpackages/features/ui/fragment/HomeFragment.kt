@@ -38,8 +38,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 putInt(OfferFragment.PACKAGE_KEY, 3)
             })
         }
+        binding.allTopOffers.setOnClickListener {
+            safeNavigate(R.id.offerFragment, args = Bundle().apply {
+                putInt(OfferFragment.PACKAGE_KEY, 4)
+            })
+        }
+        binding.easyCardOffers.setOnClickListener {
+            safeNavigate(R.id.offerFragment, args = Bundle().apply {
+                putInt(OfferFragment.PACKAGE_KEY, 5)
+            })
+        }
         binding.deviceOffers.setOnClickListener {
             safeNavigate(R.id.deviceFragment)
+        }
+
+        binding.enjoyFourGInternet.setOnClickListener {
+            safeNavigate(R.id.fourGHomeFragment)
         }
 
     }

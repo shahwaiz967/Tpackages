@@ -55,7 +55,9 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
         binding.textView.text = when(packageFor){
             1 -> "Call Offers"
             2 -> "SMS Offers"
-            else -> "Internet Offers"
+            3 -> "Internet Offers"
+            4 -> "All Top Offers"
+            else -> "Easy Card Offers"
         }
         setupTabs()
         updateTabs(

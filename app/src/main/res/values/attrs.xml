@@ -31,4 +31,23 @@
         <attr name="grid_bg_color" format="color" />
         <attr name="grid_stroke_color" format="color" />
     </declare-styleable>
+
+    <declare-styleable name="FourGHomeTileButton">
+        <attr name="fourG_title" format="string" />
+        <attr name="fourG_des" format="string" />
+        <attr name="fourG_icon" format="reference" />
+        <attr name="fourG_strokeColor" format="color" />
+        <attr name="fourG_backColor" format="color"/>
+        <attr name="arrow_back_color" format="color"/>
+        <attr name="icon_background_color" format="color"/>
+        <attr name="arrow_color" format="color"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="SimSignalGaugeView">
+        <attr name="gauge_active" format="boolean" />
+        <attr name="gauge_value" format="float" />
+        <attr name="gauge_max_value" format="float" />
+        <attr name="gauge_display_text" format="string" />
+    </declare-styleable>
 </resources>

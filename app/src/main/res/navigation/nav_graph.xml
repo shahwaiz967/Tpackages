@@ -25,5 +25,28 @@
         android:name="com.codecx.tpackages.features.ui.fragment.DeviceFragment"
         tools:layout="@layout/fragment_device"/>
 
+    <fragment
+        android:id="@+id/fourGHomeFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.FourGHomeFragment"
+        tools:layout="@layout/fragment_foug_home"/>
+
+    <fragment
+        android:id="@+id/simSignalFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.SimSignalStrengthFragment"
+        tools:layout="@layout/fragment_sim_signal_strength"/>
+
+    <fragment
+        android:id="@+id/simInfoFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.SimInfoFragment"
+        tools:layout="@layout/fragment_sim_info"/>
+
+    <fragment
+        android:id="@+id/dataUsageFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.DataUsageFragment"
+        tools:layout="@layout/fragment_data_usage"/>
+
+    <fragment android:id="@+id/lteSettingFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.LTESettingFragment"
+        tools:layout="@layout/fragment_l_t_e_setting"/>
 
 </navigation>

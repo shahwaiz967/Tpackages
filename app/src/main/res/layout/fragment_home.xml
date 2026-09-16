@@ -139,7 +139,6 @@
                 android:layout_width="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/linear3"
                 app:tile_angle="7"
@@ -147,7 +146,7 @@
                 app:tile_EndColor="#0066EE"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:linear_tile_icon="@drawable/icon_4g"
-                app:linear_tile_title="All in One" />
+                app:linear_tile_title="Enjoy 4G\nInternet" />
 
             <TextView
                 android:id="@+id/text_quick_tools"

@@ -82,6 +82,80 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_LTE_Setting">
+
+        <com.codecx.tpackages.features.ui.customViews.FourGHomeTileButton
+            android:id="@+id/dataUsage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            app:arrow_back_color="#D6F5E3"
+            app:fourG_backColor="#EEFBF4"
+            app:fourG_des="@string/check_your_mobile_data_usage"
+            app:fourG_icon="@drawable/icon_data_usage"
+            app:fourG_strokeColor="#D2F3E0"
+            app:fourG_title="@string/data_usage"
+            app:icon_background_color="#00C569" />
+
+        <com.codecx.tpackages.features.ui.customViews.FourGHomeTileButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            app:arrow_back_color="#FEE2E2"
+            app:fourG_backColor="#FFF1F2"
+            app:fourG_des="Test your Internet speed"
+            app:fourG_icon="@drawable/icon_speed_test"
+            app:fourG_strokeColor="#FED4D9"
+            app:fourG_title="Speed Test"
+            app:icon_background_color="@color/deactivate_red" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear1">
+
+        <com.codecx.tpackages.features.ui.customViews.FourGHomeTileButton
+            android:id="@+id/simSignalStrength"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            app:arrow_back_color="#FEEBC8"
+            app:fourG_backColor="#FFF9E6"
+            app:fourG_des="@string/check_your_network_signal"
+            app:fourG_icon="@drawable/icon_signal_strength"
+            app:fourG_strokeColor="#FEF0C7"
+            app:fourG_title="@string/signal_strength"
+            app:icon_background_color="#F59E0B" />
+
+        <com.codecx.tpackages.features.ui.customViews.FourGHomeTileButton
+            android:id="@+id/simInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            app:arrow_back_color="#EEE5FF"
+            app:fourG_backColor="#F6F2FF"
+            app:fourG_des="View your Sim information"
+            app:fourG_icon="@drawable/icon_sim_info"
+            app:fourG_strokeColor="#E9D5FF"
+            app:fourG_title="Sim Info"
+            app:icon_background_color="#8B5CF6" />
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,9 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge(
-            statusBarStyle = SystemBarStyle.light(
-                Color.TRANSPARENT,
-                Color.TRANSPARENT
+            statusBarStyle = SystemBarStyle.dark(
+                getColor(R.color.header_color)
             )
         )
         setContentView(binding.root)

@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    tools:context=".features.ui.fragment.SimInfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header_color"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity="center"
+            android:text="@string/sim_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sim1Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                app:cardBackgroundColor="#F0F7FF"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolBar"
+                app:strokeColor="#CCBFDBFE"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp">
+
+                        <ImageView
+                            android:id="@+id/ivSimIcon"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:background="@drawable/gradient_color"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/sim_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvSimName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:text="SIM 1"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/_18ssp"
+                            app:layout_constraintBottom_toTopOf="@+id/tvInformation"
+                            app:layout_constraintStart_toEndOf="@+id/ivSimIcon"
+                            app:layout_constraintTop_toTopOf="@+id/ivSimIcon"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/tvInformation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Information"
+                            android:textColor="@color/text_subtitle"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/ivSimIcon"
+                            app:layout_constraintStart_toEndOf="@+id/ivSimIcon"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSimName" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#F1F5F9"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_12sdp">
+
+                            <!-- Carrier Name Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Carrier Name"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCarrierName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="Ufone"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon1"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#F1F5F9" />
+
+                            <!-- Country Code Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Country Code"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline2"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCountryCode"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="pk"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon2"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#F1F5F9" />
+
+                            <!-- Display Name Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Display Name"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline3"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvDisplayName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="Ufone"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon3"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#F1F5F9" />
+
+                            <!-- MNC Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="MNC"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline4"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvMNC"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="3"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon4"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sim2Card"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                app:cardBackgroundColor="#FFF1F2"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sim1Card"
+                app:strokeColor="#CCBFDBFE"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp">
+
+                        <ImageView
+                            android:id="@+id/ivSim2Icon"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:background="@drawable/gradient_color_red"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/sim_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvSim2Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:text="SIM 2"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/_18ssp"
+                            app:layout_constraintBottom_toTopOf="@+id/tvSim2Information"
+                            app:layout_constraintStart_toEndOf="@+id/ivSim2Icon"
+                            app:layout_constraintTop_toTopOf="@+id/ivSim2Icon"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/tvSim2Information"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12sdp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Information"
+                            android:textColor="@color/text_subtitle"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/ivSim2Icon"
+                            app:layout_constraintStart_toEndOf="@+id/ivSim2Icon"
+                            app:layout_constraintTop_toBottomOf="@+id/tvSim2Name" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#F1F5F9"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_12sdp">
+
+                            <!-- Carrier Name Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Carrier Name"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline5"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCarrierName2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="Ufone"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon5"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#F1F5F9" />
+
+                            <!-- Country Code Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Country Code"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline6"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvCountryCode2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="pk"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon6"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#F1F5F9" />
+
+                            <!-- Display Name Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Display Name"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline7"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvDisplayName2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="Ufone"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon7"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#F1F5F9" />
+
+                            <!-- MNC Row -->
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_10sdp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="MNC"
+                                    android:textColor="#475569"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/colon8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="#94A3B8"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/guideline8"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tvMNC2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_12sdp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:text="3"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/colon8"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.45" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

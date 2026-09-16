@@ -19,5 +19,34 @@
     <string name="activate">Activate</string>
     <string name="deactivate">Deactivate</string>
     <string name="status">Status</string>
-    <string name="lte_setting">LTE Setting</string>
+    <string name="lte_setting">4G LTE Settings</string>
+    <string name="lte_4g">4G LTE</string>
+    <string name="optimize_network_settings">Optimize your network settings</string>
+    <string name="incoming">Incoming</string>
+    <string name="upload">Upload</string>
+    <string name="zero_kbps">0 kB/s</string>
+    <string name="below">Below</string>
+    <string name="above">Above</string>
+    <string name="android_11">Android (11)</string>
+    <string name="lte">LTE</string>
+    <string name="check_your_mobile_data_usage">Check your mobile data usage</string>
+    <string name="data_usage">Data Usage</string>
+    <string name="signal_strength">Signal Strength</string>
+    <string name="check_your_network_signal">Check your network signal</string>
+    <string name="signal_strength_of_sim">Signal Strength of SIM</string>
+    <string name="ufone">Ufone</string>
+
+    <string name="sim_1_ufone">SIM 1 (Ufone)</string>
+    <string name="signal_strength_sample">Signal Strength: -102 dBm</string>
+    <string name="signal_strength_dbm">Signal Strength: %1$d dBm</string>
+    <string name="sim_1_">SIM 1 (%1$s)</string>
+    <string name="sim_1_not_avalaible">SIM 1 (%1$s)</string>
+    <string name="sim_2_">SIM 2 (%1$s)</string>
+    <string name="sim_1">SIM 1</string>
+    <string name="sim_2">SIM 2</string>
+    <string name="no_sim_available">No SIM Available</string>
+    <string name="sim_info">Sim Info</string>
+    <string name="date">Date</string>
+    <string name="mobile">Mobile</string>
+    <string name="wifi">Wifi</string>
 </resources>
