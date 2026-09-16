@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:strokeColor="#E6F3F4F6"
+    app:strokeWidth="@dimen/_1sdp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginVertical="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Helpline"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:textSize="@dimen/_16ssp"/>
+       <!-- <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Care Number"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:textSize="@dimen/_12ssp"/>-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginTop="@dimen/_10sdp"
+            app:strokeWidth="@dimen/_1sdp"
+            app:strokeColor="#D6EAF8"
+            app:cardBackgroundColor="#EBF5FB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_Code"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:textSize="@dimen/_20ssp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDial"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15ssp"
+            android:backgroundTint="#22C55E"
+            app:cornerRadius="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Dial"/>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/copyBtn"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_width="0dp"
+                app:cardBackgroundColor="#EBF3FA"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:padding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/copy_icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copy"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/shareBtn"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_width="0dp"
+                app:cardBackgroundColor="#F4EFFE"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:padding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/share_icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Share"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

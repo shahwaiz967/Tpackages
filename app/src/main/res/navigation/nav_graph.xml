@@ -15,5 +15,15 @@
         android:name="com.codecx.tpackages.features.ui.fragment.HomeFragment"
         tools:layout="@layout/fragment_home"/>
 
+    <fragment
+        android:id="@+id/offerFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.OfferFragment"
+        tools:layout="@layout/fragment_offer"/>
+
+    <fragment
+        android:id="@+id/deviceFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.DeviceFragment"
+        tools:layout="@layout/fragment_device"/>
+
 
 </navigation>

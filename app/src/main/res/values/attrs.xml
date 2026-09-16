@@ -16,4 +16,19 @@
         <attr name="tile_angle" format="integer"/>
         <attr name="icon_tint" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="HomeQuickToolButton">
+        <attr name="title" format="string"/>
+        <attr name="icon" format="reference"/>
+        <attr name="startColor" format="color"/>
+        <attr name="endColor" format="color"/>
+        <attr name="strokeColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="OfferGridItem">
+        <attr name="grid_label" format="string" />
+        <attr name="grid_value" format="string" />
+        <attr name="grid_bg_color" format="color" />
+        <attr name="grid_stroke_color" format="color" />
+    </declare-styleable>
 </resources>

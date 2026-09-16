@@ -134,8 +134,8 @@ fun handleActivation(context: Context, code: String) {
             }
             context.startActivity(intent)
         } else {
-
-            val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", code, null))
+            val encodedCode = Uri.encode(code)
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$encodedCode"))
             context.startActivity(intent)
         }
     } catch (_: Exception) {

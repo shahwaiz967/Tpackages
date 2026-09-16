@@ -11,4 +11,13 @@
     <string name="device">Device</string>
     <string name="easy_card">Easy Card</string>
     <string name="quick_tools">Quick Tools</string>
+    <string name="call_offers">Call Offers</string>
+    <string name="on_net_mins">On-net Mins</string>
+    <string name="validity">Validity</string>
+    <string name="price">Price</string>
+    <string name="off_net_mins">Off-net Mins</string>
+    <string name="activate">Activate</string>
+    <string name="deactivate">Deactivate</string>
+    <string name="status">Status</string>
+    <string name="lte_setting">LTE Setting</string>
 </resources>

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.light(
-                R.color.primaryColor2,
+                Color.TRANSPARENT,
                 Color.TRANSPARENT
             )
         )

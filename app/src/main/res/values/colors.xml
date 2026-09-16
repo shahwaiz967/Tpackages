@@ -15,4 +15,26 @@
     <color name="text_subtitle">#94A3B8</color>
     <color name="card_green_accent">#10B981</color>
     <color name="icon_bg_green_light">#ECFDF5</color>
+
+    <color name="windowBackground">#F6F9FD</color>
+    <color name="header_color">#0088EA</color>
+
+    <color name="offer_blue_bg">#EFF6FF</color>
+    <color name="offer_blue_stroke">#3B82F6</color>
+    <color name="offer_pink_bg">#FDF2F8</color>
+    <color name="offer_pink_stroke">#EC4899</color>
+    <color name="offer_green_bg">#F0FDF4</color>
+    <color name="offer_green_stroke">#10B981</color>
+    <color name="offer_yellow_bg">#FEFCE8</color>
+    <color name="offer_yellow_stroke">#EAB308</color>
+    <color name="offer_teal_bg">#F0FDFA</color>
+    <color name="offer_teal_stroke">#14B8A6</color>
+    <color name="offer_orange_bg">#FFF7ED</color>
+    <color name="offer_orange_stroke">#F97316</color>
+    <color name="price_badge_bg">#DCFCE7</color>
+    <color name="price_badge_text">#166534</color>
+    <color name="activate_green">#22C55E</color>
+    <color name="deactivate_red">#EF4444</color>
+    <color name="status_blue">#3B82F6</color>
+
 </resources>

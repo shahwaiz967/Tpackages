@@ -37,8 +37,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
-
-        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_5sdp"
         app:layout_constraintEnd_toStartOf="@id/arrowContainer"
         app:layout_constraintStart_toEndOf="@+id/iconContainer"
         app:layout_constraintTop_toTopOf="@id/iconContainer"
@@ -47,14 +46,15 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
         android:text="@string/all_calls"
         android:textSize="@dimen/_12ssp" />
 
 
 
         <TextView
-            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             app:layout_constraintStart_toEndOf="@+id/iconContainer"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"

@@ -5,160 +5,223 @@
     android:layout_height="match_parent"
     android:paddingVertical="@dimen/_10sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="@dimen/_5sdp"
     tools:context=".features.ui.fragment.HomeFragment">
 
-   <LinearLayout
-       android:layout_marginHorizontal="@dimen/_10sdp"
-       android:id="@+id/linear1"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
-
-       <com.codecx.tpackages.features.ui.customViews.HomeTileButton
-           android:layout_width="0dp"
-           android:layout_weight="1"
-           android:layout_height="wrap_content"
-           app:tile_lip_color="@color/card_green_accent"
-           app:tile_icon_background_color="@color/icon_bg_green_light"
-           app:tile_title="@string/all_calls"
-           app:tile_des="@string/offers"
-           app:tile_icon="@drawable/ic_call"
-
-           />
-       <com.codecx.tpackages.features.ui.customViews.HomeTileButton
-           app:tile_icon_background_color="#F0F9FF"
-           android:layout_width="0dp"
-           android:layout_weight="1"
-           android:layout_height="wrap_content"
-           app:tile_title="All SMS"
-           app:tile_des="@string/offers"
-           app:tile_lip_color="#0EA5E9"
-           app:tile_icon="@drawable/ic_msg"
-
-           /><com.codecx.tpackages.features.ui.customViews.HomeTileButton
-       android:layout_width="0dp"
-       android:layout_weight="1"
-       app:tile_lip_color="#8B5CF6"
-       app:tile_icon_background_color="#F5F3FF"
-       android:layout_height="wrap_content"
-       app:tile_title="Internet"
-       app:tile_des="@string/offers"
-       app:tile_icon="@drawable/ic_wifi"
-       />
-   </LinearLayout>
-    <LinearLayout
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:id="@+id/linear2"
-        app:layout_constraintTop_toBottomOf="@id/linear1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/linear1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <com.codecx.tpackages.features.ui.customViews.HomeTileButton
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            app:tile_lip_color="#F43F5E"
-            app:tile_icon_background_color="#FFF1F2"
-            app:tile_title="@string/all_top"
-            app:tile_des="@string/offers"
-            app:tile_icon="@drawable/ic_alltop"
+                <com.codecx.tpackages.features.ui.customViews.HomeTileButton
+                    android:id="@+id/callOffers"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:tile_lip_color="@color/card_green_accent"
+                    app:tile_icon_background_color="@color/icon_bg_green_light"
+                    app:tile_title="@string/all_calls"
+                    app:tile_des="@string/offers"
+                    app:tile_icon="@drawable/ic_call"
 
-            />
-        <com.codecx.tpackages.features.ui.customViews.HomeTileButton
-            app:tile_icon_background_color="#ECFDF5"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            app:tile_title="@string/device"
-            app:tile_des="@string/offers"
-            app:tile_lip_color="#10B981"
-            app:tile_icon="@drawable/ic_device"
+                    />
+                <com.codecx.tpackages.features.ui.customViews.HomeTileButton
+                    android:id="@+id/smsOffers"
+                    app:tile_icon_background_color="#F0F9FF"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:tile_title="All SMS"
+                    app:tile_des="@string/offers"
+                    app:tile_lip_color="#0EA5E9"
+                    app:tile_icon="@drawable/ic_msg"
 
-            /><com.codecx.tpackages.features.ui.customViews.HomeTileButton
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        app:tile_lip_color="#F59E0B"
-        app:tile_icon_background_color="#FFFBEB"
-        android:layout_height="wrap_content"
-        app:tile_title="@string/easy_card"
-        app:tile_des="@string/offers"
-        app:tile_icon="@drawable/ic_easycard"
-        />
+                    /><com.codecx.tpackages.features.ui.customViews.HomeTileButton
+                android:id="@+id/internetOffers"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:tile_lip_color="#8B5CF6"
+                app:tile_icon_background_color="#F5F3FF"
+                android:layout_height="wrap_content"
+                app:tile_title="Internet"
+                app:tile_des="@string/offers"
+                app:tile_icon="@drawable/ic_wifi"
+                />
+            </LinearLayout>
+            <LinearLayout
 
-    </LinearLayout>
+                android:id="@+id/linear2"
+                app:layout_constraintTop_toBottomOf="@id/linear1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:id="@+id/linear3"
-        app:layout_constraintTop_toBottomOf="@id/linear2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+                <com.codecx.tpackages.features.ui.customViews.HomeTileButton
+                    android:id="@+id/allTopOffers"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:tile_lip_color="#F43F5E"
+                    app:tile_icon_background_color="#FFF1F2"
+                    app:tile_title="@string/all_top"
+                    app:tile_des="@string/offers"
+                    app:tile_icon="@drawable/ic_alltop"
 
-       <com.codecx.tpackages.features.ui.customViews.HomeLinearTileButton
-           android:layout_width="0dp"
-           android:layout_weight="1"
-           app:tile_angle="7"
-           android:layout_marginStart="@dimen/_10sdp"
-           app:icon_tint="@color/white"
-           app:linear_tile_title="All in One"
-           android:layout_height="wrap_content"/>
-        <com.codecx.tpackages.features.ui.customViews.HomeLinearTileButton
-            android:layout_width="0dp"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_weight="1"
-            app:tile_angle="2"
-            app:strokeColor="#38BDF8"
-            app:tile_EndColor="#2563EB"
-            app:linear_tile_icon="@drawable/icon_globe"
-            app:linear_tile_title="International"
-            android:layout_height="wrap_content"/>
+                    />
+                <com.codecx.tpackages.features.ui.customViews.HomeTileButton
+                    android:id="@+id/deviceOffers"
+                    app:tile_icon_background_color="#ECFDF5"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:tile_title="@string/device"
+                    app:tile_des="@string/offers"
+                    app:tile_lip_color="#10B981"
+                    app:tile_icon="@drawable/ic_device"
 
-    </LinearLayout>
+                    /><com.codecx.tpackages.features.ui.customViews.HomeTileButton
+                android:id="@+id/easyCardOffers"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:tile_lip_color="#F59E0B"
+                app:tile_icon_background_color="#FFFBEB"
+                android:layout_height="wrap_content"
+                app:tile_title="@string/easy_card"
+                app:tile_des="@string/offers"
+                app:tile_icon="@drawable/ic_easycard"
+                />
 
-    <com.codecx.tpackages.features.ui.customViews.HomeLinearTileButton
-        android:id="@+id/enjoy_fourG_internet"
-        android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/linear3"
-        app:tile_angle="7"
-        app:tile_StartColor="#0091FF"
-        app:tile_EndColor="#0066EE"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:linear_tile_icon="@drawable/icon_4g"
-        app:linear_tile_title="All in One" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/text_quick_tools"
-        android:text="@string/quick_tools"
-        android:textSize="@dimen/_14ssp"
-        android:fontFamily="@font/plus_jakarta_sans_bold"
-        app:layout_constraintTop_toBottomOf="@id/enjoy_fourG_internet"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="@dimen/_10sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+            <LinearLayout
+                android:id="@+id/linear3"
+                app:layout_constraintTop_toBottomOf="@id/linear2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <View
-        android:layout_marginTop="@dimen/_5sdp"
-        app:layout_constraintTop_toBottomOf="@id/text_quick_tools"
-        app:layout_constraintEnd_toEndOf="@id/text_quick_tools"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_width="@dimen/_30sdp"
-        android:layout_height="4dp"
-        android:background="@drawable/gradient_color"
-        />
+                <com.codecx.tpackages.features.ui.customViews.HomeLinearTileButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    app:tile_angle="7"
+                    app:icon_tint="@color/white"
+                    app:linear_tile_title="All in One"
+                    android:layout_height="wrap_content"/>
+                <com.codecx.tpackages.features.ui.customViews.HomeLinearTileButton
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    app:tile_angle="2"
+                    app:strokeColor="#38BDF8"
+                    app:tile_EndColor="#2563EB"
+                    app:linear_tile_icon="@drawable/icon_globe"
+                    app:linear_tile_title="International"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <com.codecx.tpackages.features.ui.customViews.HomeLinearTileButton
+                android:id="@+id/enjoy_fourG_internet"
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/linear3"
+                app:tile_angle="7"
+                app:tile_StartColor="#0091FF"
+                app:tile_EndColor="#0066EE"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:linear_tile_icon="@drawable/icon_4g"
+                app:linear_tile_title="All in One" />
+
+            <TextView
+                android:id="@+id/text_quick_tools"
+                android:text="@string/quick_tools"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                app:layout_constraintTop_toBottomOf="@id/enjoy_fourG_internet"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <View
+                android:id="@+id/view"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/text_quick_tools"
+                app:layout_constraintStart_toStartOf="@id/text_quick_tools"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="4dp"
+                android:background="@drawable/gradient_color"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.codecx.tpackages.features.ui.customViews.HomeQuickToolButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:title="Balance Check"
+                    app:icon="@drawable/ic_balance_check"
+                    app:strokeColor="#99BAE6FD"
+                    app:startColor="#F0F9FF"
+                    app:endColor="#B3DBEAFE"/>
+
+                <com.codecx.tpackages.features.ui.customViews.HomeQuickToolButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:title="Advance balance"
+                    app:icon="@drawable/ic_advance_balance"
+                    app:strokeColor="#99F6E499"
+                    app:startColor="#ECFDF5"
+                    app:endColor="#B3CCFBF1"/>
+
+                <com.codecx.tpackages.features.ui.customViews.HomeQuickToolButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:title="MB Check"
+                    app:icon="@drawable/ic_mb_check"
+                    app:strokeColor="#99E9D5FF"
+                    app:startColor="#F5F3FF"
+                    app:endColor="#B3F3E8FF"/>
+
+                <com.codecx.tpackages.features.ui.customViews.HomeQuickToolButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:title="Free MB"
+                    app:icon="@drawable/icon_free_mb"
+                    app:strokeColor="#CCFCD34D"
+                    app:startColor="#FFFBEB"
+                    app:endColor="#E6FEF3C7"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
 
 

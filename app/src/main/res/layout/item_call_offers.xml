@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:strokeColor="#F1F5F9"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/_12sdp">
+
+        <LinearLayout
+            android:id="@+id/layout_header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/layout_price_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Good Time Offer"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="2 Hours"
+                android:textColor="@color/text_subtitle"
+                android:textSize="@dimen/_11ssp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_price_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvPriceBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/price_badge_bg"
+                app:cardCornerRadius="@dimen/_12sdp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:id="@+id/tvPriceTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="PKR, 6"
+                    android:textColor="@color/price_badge_text"
+                    android:textSize="@dimen/_11ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Inc. Tax"
+                android:textColor="@color/text_subtitle"
+                android:textSize="@dimen/_8ssp" />
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:columnCount="3"
+            android:useDefaultMargins="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_header_text">
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemOnNet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_blue_bg"
+                app:grid_label="On-Net"
+                app:grid_stroke_color="@color/offer_blue_stroke"
+                app:grid_value="Unlimited" />
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemOffNet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_pink_bg"
+                app:grid_label="Off-Net"
+                app:grid_stroke_color="@color/offer_pink_stroke"
+                app:grid_value="0" />
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemSms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_green_bg"
+                app:grid_label="SMS"
+                app:grid_stroke_color="@color/offer_green_stroke"
+                app:grid_value="0" />
+
+            <!-- Row 2 -->
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemInternet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_yellow_bg"
+                app:grid_label="Internet"
+                app:grid_stroke_color="@color/offer_yellow_stroke"
+                app:grid_value="250 MB" />
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemValidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_blue_bg"
+                app:grid_label="Validity"
+                app:grid_stroke_color="@color/offer_blue_stroke"
+                app:grid_value="-" />
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_orange_bg"
+                app:grid_label="Price"
+                app:grid_stroke_color="@color/offer_orange_stroke"
+                app:grid_value="6" />
+
+            <!-- Row 3 -->
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemActivateCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_teal_bg"
+                app:grid_label="Activate"
+                app:grid_stroke_color="@color/offer_teal_stroke"
+                app:grid_value="*345*20#" />
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemDeactivateCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_pink_bg"
+                app:grid_label="Deactivate"
+                app:grid_stroke_color="@color/offer_pink_stroke"
+                app:grid_value="-" />
+
+            <com.codecx.tpackages.features.ui.customViews.OfferGridItem
+                android:id="@+id/itemStatusCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/_4sdp"
+                app:grid_bg_color="@color/offer_green_bg"
+                app:grid_label="Status"
+                app:grid_stroke_color="@color/offer_green_stroke"
+                app:grid_value="-" />
+
+        </GridLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvActivate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gridLayout"
+            app:strokeColor="#B2EECB"
+            app:strokeWidth="2dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnActivate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:backgroundTint="@color/activate_green"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Activate"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14ssp"
+                app:cornerRadius="@dimen/_25sdp" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
+            android:id="@+id/layout_secondary_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvActivate">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeactivate"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Deactivate"
+                android:textAllCaps="false"
+                android:textColor="@color/deactivate_red"
+                android:textSize="@dimen/_12ssp"
+                app:cornerRadius="@dimen/_20sdp"
+                app:strokeColor="@color/deactivate_red" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStatus"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_weight="1"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Status"
+                android:textAllCaps="false"
+                android:textColor="@color/status_blue"
+                android:textSize="@dimen/_12ssp"
+                app:cornerRadius="@dimen/_20sdp"
+                app:strokeColor="@color/status_blue" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:cardBackgroundColor="@color/offer_blue_bg"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_secondary_buttons"
+            app:strokeColor="#BFDBFE"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <View
+                    android:layout_width="@dimen/_3sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_color" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:text="Activate the Telenor Good Time Offer and get 2 hours of calls to any Telenor number and 250 MB for Facebook. All Telenor and Djuice customers are eligible for this offer."
+                    android:textColor="#1E40AF"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

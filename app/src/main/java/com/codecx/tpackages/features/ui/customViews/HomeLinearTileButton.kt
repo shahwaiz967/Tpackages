@@ -23,7 +23,8 @@ class HomeLinearTileButton @JvmOverloads constructor(context: Context, attrs: At
     init {
         cardElevation = 0f
         setCardBackgroundColor(Color.WHITE)
-        strokeWidth = 0
+        strokeWidth = 1
+        strokeColor = "#F1F5F9".toColorInt()
         radius = 16.toDp(context).toFloat()
 
         context.withStyledAttributes(
@@ -44,10 +45,12 @@ class HomeLinearTileButton @JvmOverloads constructor(context: Context, attrs: At
             val startColor = getColor(R.styleable.HomeLinearTileButton_tile_StartColor, "#D946EF".toColorInt())
             val endColor = getColor(R.styleable.HomeLinearTileButton_tile_EndColor,"#EC4899".toColorInt())
             val angle = getInteger(R.styleable.HomeLinearTileButton_tile_angle, GradientDrawable.Orientation.TOP_BOTTOM.ordinal)
+            val orientations = GradientDrawable.Orientation.values()
+            val safeAngle = if (angle in orientations.indices) angle else GradientDrawable.Orientation.TOP_BOTTOM.ordinal
 
             val gradientDrawable =
                 GradientDrawable(
-                    GradientDrawable.Orientation.values()[angle],
+                    orientations[safeAngle],
                     intArrayOf(startColor, endColor)
                 )
             binding.vGradientBackground.background = gradientDrawable
