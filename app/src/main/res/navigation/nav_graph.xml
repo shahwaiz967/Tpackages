@@ -49,4 +49,14 @@
         android:name="com.codecx.tpackages.features.ui.fragment.LTESettingFragment"
         tools:layout="@layout/fragment_l_t_e_setting"/>
 
+    <fragment
+        android:id="@+id/quickToolFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.QuickToolsFragment"
+        tools:layout="@layout/fragment_quick_tools"/>
+
+    <fragment
+        android:id="@+id/speedTestFragment"
+        android:name="com.codecx.tpackages.features.ui.fragment.SpeedTestFragment"
+        tools:layout="@layout/fragment_speet_test"/>
+
 </navigation>

@@ -106,6 +106,7 @@
             app:icon_background_color="#00C569" />
 
         <com.codecx.tpackages.features.ui.customViews.FourGHomeTileButton
+            android:id="@+id/speed_test"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"

@@ -21,14 +21,15 @@
             android:text="Helpline"
             android:fontFamily="@font/plus_jakarta_sans_bold"
             android:textSize="@dimen/_16ssp"/>
-       <!-- <TextView
+        <TextView
+            android:visibility="gone"
             android:id="@+id/tv_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Customer Care Number"
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/plus_jakarta_sans_regular"
-            android:textSize="@dimen/_12ssp"/>-->
+            android:textSize="@dimen/_12ssp"/>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_marginTop="@dimen/_10sdp"

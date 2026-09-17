@@ -19,6 +19,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    base.archivesName.set("TPackages${defaultConfig.versionName}")
 
     buildTypes {
         release {

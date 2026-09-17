@@ -20,6 +20,7 @@
             tools:text="On-Net" />
 
         <TextView
+            android:maxLines="1"
             android:id="@+id/tvValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

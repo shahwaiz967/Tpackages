@@ -57,13 +57,11 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
             2 -> "SMS Offers"
             3 -> "Internet Offers"
             4 -> "All Top Offers"
-            else -> "Easy Card Offers"
+            5 -> "Easy Card Offers"
+            6 -> "All In One Offers"
+            else -> "International Offers"
         }
         setupTabs()
-        updateTabs(
-            selectedTab = binding.tvDaily,
-            allTabs = listOf(binding.tvDaily, binding.tvWeekly, binding.tvMonthly)
-        )
     }
 
     private fun setupRecyclerView() {
@@ -73,20 +71,29 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
         }
     }
 
+
     private fun setupTabs() {
-        val tabsMapping = mapOf(
+
+         val tabsMapping = mapOf(
             binding.tvDaily to 1,
             binding.tvWeekly to 7,
             binding.tvMonthly to 30
         )
-
         tabsMapping.forEach { (tab, validity) ->
             tab.setOnClickListener {
                 updateTabs(tab, tabsMapping.keys.toList())
                 filterOffers(validity)
             }
         }
-        filterOffers(1)
+
+        // Auto-select the first tab that actually has offers
+        val allOffers = OfferPackages.getOffers(packageFor)
+        val defaultTabEntry = tabsMapping.entries.firstOrNull { (_, validity) ->
+            allOffers.any { it.validity == validity }
+        } ?: tabsMapping.entries.first()
+
+        updateTabs(defaultTabEntry.key, tabsMapping.keys.toList())
+        filterOffers(defaultTabEntry.value)
     }
 
     private fun filterOffers(validity: Int) {
@@ -94,6 +101,7 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
             item.validity == validity
         }
         offersAdapter.submitList(filteredList)
+        binding.tvNoOffers.visibility = if (filteredList.isEmpty()) View.VISIBLE else View.GONE
     }
     private fun updateTabs(selectedTab: TextView, allTabs: List<TextView>) {
         allTabs.forEach { tab ->

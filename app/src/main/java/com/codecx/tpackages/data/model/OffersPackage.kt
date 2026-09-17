@@ -1,6 +1,6 @@
 package com.codecx.tpackages.data.model
 
-data class Package(
+data class OffersPackage(
     val id: Int,
     val description: String? = null,
     val title: String? = null,

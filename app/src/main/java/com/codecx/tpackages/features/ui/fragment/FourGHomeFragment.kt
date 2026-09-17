@@ -36,6 +36,9 @@ class FourGHomeFragment : BaseFragment<FragmentFougHomeBinding>() {
         binding.btnLTESetting.setOnClickListener {
             safeNavigate(R.id.lteSettingFragment)
         }
+        binding.speedTest.setOnClickListener {
+            safeNavigate(R.id.speedTestFragment)
+        }
 
     }
 

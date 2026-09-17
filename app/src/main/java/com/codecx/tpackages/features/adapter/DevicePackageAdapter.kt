@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.graphics.toColorInt
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -46,6 +47,13 @@ private val buttonColors = listOf(
                 binding.apply {
                     tvTitle.text = item.title
                     tvCode.text = item.code
+                    
+                    if (!item.description.isNullOrEmpty()) {
+                        tvDes.text = item.description
+                        tvDes.isVisible = true
+                    } else {
+                        tvDes.isVisible = false
+                    }
 
                     val color = buttonColors[bindingAdapterPosition % buttonColors.size]
                     btnDial.backgroundTintList = ColorStateList.valueOf(color)

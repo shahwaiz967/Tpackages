@@ -2,16 +2,17 @@ package com.codecx.tpackages.features.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.codecx.tpackages.data.model.Package
+import com.codecx.tpackages.data.model.OffersPackage
 import com.codecx.tpackages.data.utils.handleSafeClick
 import com.codecx.tpackages.databinding.ItemCallOffersBinding
 
 class OffersAdapter(
-    private val onAction: (Action, Package) -> Unit
-) : ListAdapter<Package, OffersAdapter.ViewHolder>(DiffCallback()) {
+    private val onAction: (Action, OffersPackage) -> Unit
+) : ListAdapter<OffersPackage, OffersAdapter.ViewHolder>(DiffCallback()) {
 
     enum class Action {
         ACTIVATE, DEACTIVATE, STATUS
@@ -29,7 +30,7 @@ class OffersAdapter(
     inner class ViewHolder(private val binding: ItemCallOffersBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Package) {
+        fun bind(item: OffersPackage) {
             binding.apply {
                 tvTitle.text = item.title
                 tvSubtitle.text = if (item.validity != null) "${item.validity} Days" else ""
@@ -45,7 +46,13 @@ class OffersAdapter(
                 itemDeactivateCode.setValue(item.deactivate ?: "-")
                 itemStatusCode.setValue(item.status ?: "-")
 
-                tvDescription.text = item.desc ?: item.description ?: ""
+                val desc = item.desc ?: item.description
+                if (!desc.isNullOrEmpty()) {
+                    tvDescription.text = desc
+                    cvDescription.isVisible = true
+                } else {
+                    cvDescription.isVisible = false
+                }
 
                 btnActivate.handleSafeClick { onAction(Action.ACTIVATE, item) }
                 btnDeactivate.handleSafeClick { onAction(Action.DEACTIVATE, item) }
@@ -54,11 +61,11 @@ class OffersAdapter(
         }
     }
 
-    class DiffCallback : DiffUtil.ItemCallback<Package>() {
-        override fun areItemsTheSame(oldItem: Package, newItem: Package): Boolean =
+    class DiffCallback : DiffUtil.ItemCallback<OffersPackage>() {
+        override fun areItemsTheSame(oldItem: OffersPackage, newItem: OffersPackage): Boolean =
             oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: Package, newItem: Package): Boolean =
+        override fun areContentsTheSame(oldItem: OffersPackage, newItem: OffersPackage): Boolean =
             oldItem == newItem
     }
 }

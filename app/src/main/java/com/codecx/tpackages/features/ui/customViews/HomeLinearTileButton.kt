@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import androidx.core.content.withStyledAttributes
 import androidx.core.graphics.toColorInt
 import com.codecx.tpackages.R
+import com.codecx.tpackages.data.utils.beVisibleIf
 
 import com.codecx.tpackages.data.utils.toDp
 import com.codecx.tpackages.databinding.ItemHomeSecondBinding
@@ -19,6 +20,13 @@ class HomeLinearTileButton @JvmOverloads constructor(context: Context, attrs: At
 
         private val binding : ItemHomeSecondBinding =
             ItemHomeSecondBinding.inflate(LayoutInflater.from(context), this, true)
+
+    var des: String? = null
+        set(value) {
+            field = value
+            binding.tvSubtitle.beVisibleIf(!value.isNullOrEmpty())
+            binding.tvSubtitle.text = value
+        }
 
     init {
         cardElevation = 0f
@@ -33,6 +41,7 @@ class HomeLinearTileButton @JvmOverloads constructor(context: Context, attrs: At
             defStyleAttr,
             R.style.Theme_TPackages
         ){
+            des = getString(R.styleable.HomeLinearTileButton_linear_tile_des)
             binding.tvTitle.text = getString(R.styleable.HomeLinearTileButton_linear_tile_title)
             binding.ivMainIcon.setImageResource(getResourceId(R.styleable.HomeLinearTileButton_linear_tile_icon,
                 R.drawable.ic_alltop))
@@ -54,6 +63,7 @@ class HomeLinearTileButton @JvmOverloads constructor(context: Context, attrs: At
                     intArrayOf(startColor, endColor)
                 )
             binding.vGradientBackground.background = gradientDrawable
+            binding.tvTitle.isSelected = true
         }
     }
 }

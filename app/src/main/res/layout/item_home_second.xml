@@ -37,18 +37,23 @@
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:text="@string/all_calls"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@id/iconContainer"
         app:layout_constraintEnd_toStartOf="@id/arrowContainer"
         app:layout_constraintStart_toEndOf="@+id/iconContainer"
         app:layout_constraintTop_toTopOf="@id/iconContainer"
-        app:layout_constraintBottom_toBottomOf="@id/iconContainer"
-        android:id="@+id/tvTitle"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/plus_jakarta_sans_bold"
-        android:text="@string/all_calls"
-        android:textSize="@dimen/_12ssp" />
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"/>
 
 
 
@@ -56,6 +61,9 @@
             android:fontFamily="@font/plus_jakarta_sans_regular"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_8sdp"
+            android:text="Offers"
+            android:visibility="gone"
+            tools:visibility="visible"
             app:layout_constraintStart_toEndOf="@+id/iconContainer"
             app:layout_constraintTop_toBottomOf="@id/tvTitle"
             android:id="@+id/tvSubtitle"

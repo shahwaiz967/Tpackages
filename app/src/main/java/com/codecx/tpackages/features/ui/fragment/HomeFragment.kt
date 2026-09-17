@@ -48,12 +48,44 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 putInt(OfferFragment.PACKAGE_KEY, 5)
             })
         }
+        binding.allInOneBtn.setOnClickListener {
+            safeNavigate(R.id.offerFragment, args = Bundle().apply {
+                putInt(OfferFragment.PACKAGE_KEY, 6)
+            })
+        }
+        binding.internationalOffers.setOnClickListener {
+            safeNavigate(R.id.offerFragment, args = Bundle().apply {
+                putInt(OfferFragment.PACKAGE_KEY, 7)
+            })
+        }
         binding.deviceOffers.setOnClickListener {
             safeNavigate(R.id.deviceFragment)
         }
 
         binding.enjoyFourGInternet.setOnClickListener {
             safeNavigate(R.id.fourGHomeFragment)
+        }
+
+        binding.balanceCheckBtn.setOnClickListener {
+            safeNavigate(R.id.quickToolFragment, args = Bundle().apply {
+                putInt(QuickToolsFragment.QUICK_TOOL_KEY, 1)
+            })
+        }
+
+        binding.advanceBalanceBtn.setOnClickListener {
+            safeNavigate(R.id.quickToolFragment, args = Bundle().apply {
+                putInt(QuickToolsFragment.QUICK_TOOL_KEY, 2)
+            })
+        }
+        binding.mbCheckBtn.setOnClickListener {
+            safeNavigate(R.id.quickToolFragment, args = Bundle().apply {
+                putInt(QuickToolsFragment.QUICK_TOOL_KEY, 3)
+            })
+        }
+        binding.freeMbBtn.setOnClickListener {
+            safeNavigate(R.id.quickToolFragment, args = Bundle().apply {
+                putInt(QuickToolsFragment.QUICK_TOOL_KEY, 4)
+            })
         }
 
     }
