@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.codecx.tpackages"
+        applicationId = "com.arsalhub.paktpackages"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

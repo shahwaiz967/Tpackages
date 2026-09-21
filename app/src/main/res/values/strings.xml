@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TPackages</string>
+    <string name="app_name">Pak T Packages</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="loading">Loading...</string>
@@ -50,4 +50,6 @@
     <string name="mobile">Mobile</string>
     <string name="wifi">Wifi</string>
     <string name="no_offers">No Offers Available</string>
+
+    <string name="privacy_policy">https://arsalhubp.blogspot.com/p/privacy-policy-pak-t-packages.html</string>
 </resources>
