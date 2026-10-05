@@ -8,9 +8,19 @@
     android:paddingHorizontal="@dimen/_5sdp"
     tools:context=".features.ui.fragment.HomeFragment">
 
-    <ScrollView
+    <FrameLayout
+        android:id="@+id/ad_top_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/ad_top_layout"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/ad_bottom_layout"
+        android:layout_height="0dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -228,6 +238,14 @@
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/ad_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 

@@ -37,4 +37,9 @@
     <color name="deactivate_red">#EF4444</color>
     <color name="status_blue">#3B82F6</color>
 
+    <color name="adBackgroundColor">#F4F4F4</color>
+    <color name="shimmer_holder_color">#DBDBDB</color>
+    <color name="dark_gray">#9F9FA1</color>"
+    <color name="light_gray">#B3A9A9</color>"
+
 </resources>

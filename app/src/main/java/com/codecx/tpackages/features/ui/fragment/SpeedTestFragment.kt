@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.codecx.tpackages.data.ads.utils.bindNative
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.databinding.FragmentSpeetTestBinding
 import com.codecx.tpackages.features.base.BaseFragment
 import com.codecx.tpackages.features.viewModel.SpeedTestViewModel
@@ -30,6 +32,11 @@ class SpeedTestFragment : BaseFragment<FragmentSpeetTestBinding>() {
             viewModel.startSpeedTest()
         }
         observeViewModel()
+        bindNative(
+            RemoteConfigHelper.adIds.speedTestNative,
+            false,
+            binding.adBottomLayout
+        )
     }
 
     private fun observeViewModel(){

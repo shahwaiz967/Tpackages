@@ -9,7 +9,9 @@ import androidx.compose.animation.fadeIn
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codecx.tpackages.R
+import com.codecx.tpackages.data.ads.utils.bindNative
 import com.codecx.tpackages.data.utils.OfferPackages
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.databinding.FragmentDeviceBinding
 import com.codecx.tpackages.features.adapter.DevicePackageAdapter
 import com.codecx.tpackages.features.base.BaseFragment
@@ -37,6 +39,11 @@ class DeviceFragment : BaseFragment<FragmentDeviceBinding>() {
         adapter.submitList(OfferPackages.deviceOffers())
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
+        bindNative(
+            RemoteConfigHelper.adIds.deviceNative,
+            false,
+            binding.adBottomLayout
+        )
     }
 
 }
