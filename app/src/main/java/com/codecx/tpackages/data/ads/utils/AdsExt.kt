@@ -13,7 +13,6 @@ import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import com.codecx.tpackages.R
 import com.codecx.tpackages.data.ads.CodecxAd
-import com.codecx.tpackages.data.ads.bannerAds.BannerAd
 import com.codecx.tpackages.data.ads.collapsBannerAd.CollapseBannerAd
 import com.codecx.tpackages.data.ads.enums.getNativeLayout
 import com.codecx.tpackages.data.ads.enums.getShimmerLayout
@@ -26,6 +25,7 @@ import com.codecx.tpackages.data.utils.RemoteConfigHelper.BANNER_AD_TYPE
 import com.codecx.tpackages.data.utils.RemoteConfigHelper.COLLAPSIBLE_AD_TYPE
 import com.codecx.tpackages.data.utils.currentActivity
 import com.codecx.tpackages.MainActivity
+import com.codecx.tpackages.data.ads.bannerAds.BannerAd
 import com.google.android.libraries.ads.mobile.sdk.nativead.NativeAd
 import com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView
 import kotlinx.coroutines.CoroutineScope
@@ -209,8 +209,8 @@ fun Fragment.bindNative(adItem: AdItem, isPro: Boolean, container: ViewGroup?) {
             return
         }
         container?.visibility = View.VISIBLE
-        when (adItem.adFormat) {
-            BANNER_AD_TYPE -> {
+        when {
+            adItem.adFormat.equals(BANNER_AD_TYPE, ignoreCase = true) -> {
                 BannerAd.showBanner(
                     adItem = adItem,
                     isPro = false,
@@ -221,7 +221,7 @@ fun Fragment.bindNative(adItem: AdItem, isPro: Boolean, container: ViewGroup?) {
                 )
             }
 
-            COLLAPSIBLE_AD_TYPE -> {
+            adItem.adFormat.equals(COLLAPSIBLE_AD_TYPE, ignoreCase = true) -> {
                 CollapseBannerAd.loadCollapseBanner(
                     activity = requireActivity(),
                     isAdAllowed = true,

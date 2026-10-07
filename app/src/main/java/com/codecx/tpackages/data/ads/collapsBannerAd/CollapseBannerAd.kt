@@ -3,7 +3,12 @@ package com.codecx.tpackages.data.ads.collapsBannerAd
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.FrameLayout
+import androidx.core.view.updateLayoutParams
+import com.codecx.tpackages.R
 import com.codecx.tpackages.data.ads.CodecxAd
 import com.codecx.tpackages.data.ads.GDPR.UMPConsent
 import com.codecx.tpackages.data.ads.interfaces.AdCallBack
@@ -11,13 +16,14 @@ import com.codecx.tpackages.data.ads.openAd.OpenAdConfig
 import com.codecx.tpackages.data.ads.utils.removeSelf
 import com.codecx.tpackages.data.ads.utils.runOnUiThread
 import com.codecx.tpackages.data.utils.beVisible
+import com.codecx.tpackages.data.utils.toDp
 import com.google.android.libraries.ads.mobile.sdk.banner.AdSize
 import com.google.android.libraries.ads.mobile.sdk.banner.AdView
 import com.google.android.libraries.ads.mobile.sdk.banner.BannerAd
 import com.google.android.libraries.ads.mobile.sdk.banner.BannerAdEventCallback
 import com.google.android.libraries.ads.mobile.sdk.banner.BannerAdRequest
 import com.google.android.libraries.ads.mobile.sdk.common.AdLoadCallback
-
+import com.google.android.libraries.ads.mobile.sdk.common.LoadAdError
 
 object CollapseBannerAd {
     private val cacheAds = hashMapOf<String, AdView>()
@@ -108,5 +114,4 @@ object CollapseBannerAd {
             adWidth
         )
     }
-
 }

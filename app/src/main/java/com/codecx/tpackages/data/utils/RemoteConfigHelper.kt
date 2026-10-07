@@ -16,6 +16,7 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withTimeout
 import kotlin.time.Duration.Companion.seconds
 
+
 object RemoteConfigHelper {
     const val NATIVE_AD_TYPE = "native"
     const val INTER_AD_TYPE = "inter"
@@ -58,7 +59,7 @@ object RemoteConfigHelper {
                 mFirebaseRemoteConfig.fetchAndActivate().await()
             }
         }.onSuccess {
-            val key = if (isInTestMode) "aps_config_test" else "ads_config"
+            val key = if (isInTestMode) "ads_config_test" else "ads_config"
             val json = mFirebaseRemoteConfig.getString(key)
 
             Log.d(TAG, "checkRemoteConfig: Fetched JSON: $json")
@@ -89,22 +90,29 @@ object RemoteConfigHelper {
 
             homeFirstClick = true, adFrequency = 3,
             homeTopNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            homeBottomBanner = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
             homeInter = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
+            homeMiddleNative = AdItem(BuildConfig.advance_native_id,true,NATIVE_AD_TYPE),
 
-            offerNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            deviceNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            quickToolNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
 
-            fourGNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE,7),
+            homeBottomBanner = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            offerBanner = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+
+            offerInter = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
+            offerNative = AdItem(BuildConfig.advance_native_id,true,NATIVE_AD_TYPE),
+
+
+            deviceNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            quickToolNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+
+            fourGNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
             fourGInter = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
 
-            simSignalNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            simInfoNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            dataUsageNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            lteNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
+            simSignalNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            simInfoNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            dataUsageNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            lteNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
 
-            speedTestNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE)
+            speedTestNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE)
             )
     }
 }

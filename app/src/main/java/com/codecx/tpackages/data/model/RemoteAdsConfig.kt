@@ -22,62 +22,55 @@ data class RemoteAdsConfig(
     val adFrequency : Int = 3,
     @SerializedName("home_first_click")
     val homeFirstClick : Boolean = true,
+    @SerializedName("home_middle_native")
+    val homeMiddleNative : AdItem = AdItem(),
 
     //OfferFragment
+    @SerializedName("offer_banner")
+    val offerBanner : AdItem = AdItem(),
+    @SerializedName("offer_inter")
+    val offerInter : AdItem = AdItem(),
+    @SerializedName("offer_native_frequency")
+    val offerNativeFrequency : Int = 2,
     @SerializedName("offer_native")
     val offerNative : AdItem = AdItem(),
-    /*@SerializedName("offer_bottom_native")
-    val offerBottomNative : AdItem = AdItem(),*/
+
 
 
     //QuickToolFragment
-    @SerializedName("quickTool_native")
+    @SerializedName("quickTool_banner")
     val quickToolNative : AdItem = AdItem(),
-    /*@SerializedName("quickTool_bottom_native")
-    val quickToolBottomNative : AdItem = AdItem(),*/
 
 
     //DeviceFragment
-    @SerializedName("device_native")
+    @SerializedName("device_banner")
     val deviceNative : AdItem = AdItem(),
-    /*@SerializedName("device_bottom_native")
-    val deviceBottomNative : AdItem = AdItem(),*/
 
     //FourGHome
-    @SerializedName("fourG_native")
+    @SerializedName("fourG_banner")
     val fourGNative : AdItem = AdItem(),
     @SerializedName("fourG_inter")
     val fourGInter : AdItem = AdItem(),
 
     //SimSignalStrength
-    @SerializedName("sim_signal_native")
+    @SerializedName("sim_signal_banner")
     val simSignalNative : AdItem = AdItem(),
-    /*@SerializedName("sim_signal_bottom_native")
-    val simSignalBottomNative : AdItem = AdItem(),*/
 
     //SimInfo
-    @SerializedName("sim_info_native")
+    @SerializedName("sim_info_banner")
     val simInfoNative : AdItem = AdItem(),
-    /*@SerializedName("sim_info_bottom_native")
-    val simInfoBottomNative : AdItem = AdItem(),*/
 
     //DataUsage
-    @SerializedName("data_usage_native")
+    @SerializedName("data_usage_banner")
     val dataUsageNative : AdItem = AdItem(),
-    /*@SerializedName("data_usage_bottom_native")
-    val dataUsageBottomNative : AdItem = AdItem(),*/
 
     //LTESetting
-    @SerializedName("lte_native")
+    @SerializedName("lte_banner")
     val lteNative : AdItem = AdItem(),
-    /*@SerializedName("lte_bottom_native")
-    val lteBottomNative : AdItem = AdItem(),*/
 
     //SpeedTest
-    @SerializedName("speed_test_native")
+    @SerializedName("speed_test_banner")
     val speedTestNative : AdItem = AdItem(),
-    /*@SerializedName("speed_test_bottom_native")
-    val speedTestBottomNative : AdItem = AdItem(),*/
 
 
 

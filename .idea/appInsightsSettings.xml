@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.arsalhub.paktpackages" />
+                  <option name="mobileSdkAppId" value="1:657953015239:android:ba91e648e2c773192d85e2" />
+                  <option name="projectId" value="telenor-packages-8213a" />
+                  <option name="projectNumber" value="657953015239" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

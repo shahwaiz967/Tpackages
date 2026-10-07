@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657953015239",
+    "project_id": "telenor-packages-8213a",
+    "storage_bucket": "telenor-packages-8213a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657953015239:android:ba91e648e2c773192d85e2",
+        "android_client_info": {
+          "package_name": "com.arsalhub.paktpackages"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASRAbWmFse9MiBuKkuJ3XVe5VI6Wi6mLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

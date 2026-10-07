@@ -3,15 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="@dimen/_10sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingHorizontal="@dimen/_5sdp"
+
     tools:context=".features.ui.fragment.HomeFragment">
 
     <FrameLayout
         android:id="@+id/ad_top_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,11 +20,13 @@
     <ScrollView
         app:layout_constraintTop_toBottomOf="@id/ad_top_layout"
         android:layout_width="match_parent"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toTopOf="@id/ad_bottom_layout"
         android:layout_height="0dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:padding="@dimen/_10sdp"
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/linear1"
                 app:layout_constraintTop_toTopOf="parent"
@@ -112,10 +115,17 @@
                 />
 
             </LinearLayout>
+            <FrameLayout
+                app:layout_constraintTop_toBottomOf="@id/linear2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ad_middle_layout"/>
 
             <LinearLayout
                 android:id="@+id/linear3"
-                app:layout_constraintTop_toBottomOf="@id/linear2"
+                app:layout_constraintTop_toBottomOf="@id/ad_middle_layout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:gravity="center"
@@ -243,8 +253,8 @@
         android:id="@+id/ad_bottom_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 

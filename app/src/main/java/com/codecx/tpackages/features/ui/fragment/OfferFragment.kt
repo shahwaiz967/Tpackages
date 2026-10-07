@@ -14,7 +14,9 @@ import com.codecx.tpackages.features.base.BaseFragment
 
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.codecx.tpackages.data.ads.googleads.InterstitialAdHelper
 import com.codecx.tpackages.data.ads.utils.bindNative
+import com.codecx.tpackages.data.ads.utils.showInter
 import com.codecx.tpackages.data.utils.OfferPackages
 import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.data.utils.handleActivation
@@ -22,6 +24,7 @@ import com.codecx.tpackages.features.adapter.OffersAdapter
 import kotlin.collections.forEach
 
 class OfferFragment : BaseFragment<FragmentOfferBinding>() {
+    private val interstitialHelper = InterstitialAdHelper.InterstitialHelper()
 
     companion object {
         const val PACKAGE_KEY = "package_key"
@@ -66,7 +69,7 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
         setupTabs()
 
         bindNative(
-            RemoteConfigHelper.adIds.offerNative,
+            RemoteConfigHelper.adIds.offerBanner,
             false,
             binding.adBottomLayout
         )
@@ -89,9 +92,24 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
         )
         tabsMapping.forEach { (tab, validity) ->
             tab.setOnClickListener {
-                updateTabs(tab, tabsMapping.keys.toList())
-                filterOffers(validity)
+                showInter(
+                    interstitialHelper,
+                    RemoteConfigHelper.adIds.offerInter.adId,
+                    RemoteConfigHelper.adIds.offerInter.isAdEnable,
+                    onDismiss = {
+                        updateTabs(tab, tabsMapping.keys.toList())
+                        filterOffers(validity)
+                    },
+                    onFail = {
+                        updateTabs(tab, tabsMapping.keys.toList())
+                        filterOffers(validity)
+                    }
+                )
             }
+                /*tab.setOnClickListener {
+                    updateTabs(tab, tabsMapping.keys.toList())
+                    filterOffers(validity)
+                }*/
         }
 
         // Auto-select the first tab that actually has offers
@@ -108,7 +126,7 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
         val filteredList = OfferPackages.getOffers(packageFor).filter { item ->
             item.validity == validity
         }
-        offersAdapter.submitList(filteredList)
+        offersAdapter.submitOffers(filteredList)
         binding.tvNoOffers.visibility = if (filteredList.isEmpty()) View.VISIBLE else View.GONE
     }
     private fun updateTabs(selectedTab: TextView, allTabs: List<TextView>) {

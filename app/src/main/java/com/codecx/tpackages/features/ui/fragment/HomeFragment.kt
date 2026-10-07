@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnPreDraw
+import androidx.core.view.postDelayed
 import com.codecx.tpackages.R
 import com.codecx.tpackages.data.ads.googleads.InterstitialAdHelper
 import com.codecx.tpackages.data.ads.utils.bindNative
@@ -29,7 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadAds()
+
 
         binding.callOffers.setOnClickListener{
             showInterstitial {
@@ -135,20 +137,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
         }
 
+        loadNativeBanner()
     }
-
-    private fun loadAds(){
+    private fun loadNativeBanner(){
         bindNative(
             RemoteConfigHelper.adIds.homeTopNative,
             false,
             binding.adTopLayout
         )
         bindNative(
+            RemoteConfigHelper.adIds.homeMiddleNative,
+            false,
+            binding.adMiddleLayout
+        )
+        bindNative(
             RemoteConfigHelper.adIds.homeBottomBanner,
             false,
             binding.adBottomLayout
         )
+
     }
+
+
 
     private fun showInterstitial(onAction: () -> Unit) {
         if (!isFirstAction&& RemoteConfigHelper.adIds.homeFirstClick){

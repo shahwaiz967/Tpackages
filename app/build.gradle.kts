@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     id("com.google.firebase.crashlytics")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -9,12 +10,12 @@ android {
     signingConfigs {
         create("release") {
             val keystorePropertiesFile =
-                rootProject.file("not_avalaible.jks")
+                rootProject.file("tpackages.jks")
             if (keystorePropertiesFile.exists()) {
                 storeFile = keystorePropertiesFile
-                storePassword = "not_avalaible"
+                storePassword = "tpackages"
                 keyAlias = "key0"
-                keyPassword = "not_avalaible"
+                keyPassword = "tpackages"
             } else {
                 println("Warning: keystore.properties not found. Release build may fail.")
             }
@@ -58,7 +59,7 @@ android {
             dimension = "mainFlavorDimension"
 
             buildConfigField("String", "app_id", "\"ca-app-pub-3940256099942544~3347511713\"")
-            buildConfigField("String", "banner_id", "\"ca-app-pub-3940256099942544/9214589741\"")
+            buildConfigField("String", "banner_id", "\"ca-app-pub-3940256099942544/2014213617\"")
             buildConfigField("String", "inter_id", "\"ca-app-pub-3940256099942544/1033173712\"")
             buildConfigField("String", "advance_native_id", "\"ca-app-pub-3940256099942544/2247696110\"")
             buildConfigField("String", "app_open_id", "\"ca-app-pub-3940256099942544/9257395921\"")
