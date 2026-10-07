@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.codecx.tpackages.R
+import com.codecx.tpackages.data.ads.googleads.InterstitialAdHelper
+import com.codecx.tpackages.data.ads.utils.bindNative
+import com.codecx.tpackages.data.ads.utils.showInter
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.data.utils.safeNavigate
 import com.codecx.tpackages.databinding.FragmentFougHomeBinding
 import com.codecx.tpackages.features.base.BaseFragment
 
 class FourGHomeFragment : BaseFragment<FragmentFougHomeBinding>() {
+    private val interstitialHelper = InterstitialAdHelper.InterstitialHelper()
     override fun binLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,21 +30,56 @@ class FourGHomeFragment : BaseFragment<FragmentFougHomeBinding>() {
             findNavController().popBackStack()
         }
         binding.simSignalStrength.setOnClickListener {
-            safeNavigate(R.id.simSignalFragment)
+            showInterstitial {
+
+                safeNavigate(R.id.simSignalFragment)
+            }
+
         }
         binding.simInfo.setOnClickListener {
-            safeNavigate(R.id.simInfoFragment)
+            showInterstitial {
+
+                safeNavigate(R.id.simInfoFragment)
+            }
         }
         binding.dataUsage.setOnClickListener {
-            safeNavigate(R.id.dataUsageFragment)
+
+            showInterstitial {
+                safeNavigate(R.id.dataUsageFragment)
+            }
         }
         binding.btnLTESetting.setOnClickListener {
-            safeNavigate(R.id.lteSettingFragment)
+            showInterstitial {
+
+                safeNavigate(R.id.lteSettingFragment)
+            }
         }
         binding.speedTest.setOnClickListener {
-            safeNavigate(R.id.speedTestFragment)
-        }
+            showInterstitial {
 
+                safeNavigate(R.id.speedTestFragment)
+            }
+        }
+        bindNative(
+            RemoteConfigHelper.adIds.fourGNative,
+            false,
+            binding.adBottomLayout
+        )
+
+    }
+
+    private fun showInterstitial(onDone: () -> Unit){
+        showInter(
+            interstitialHelper,
+            RemoteConfigHelper.adIds.fourGInter.adId,
+            RemoteConfigHelper.adIds.fourGInter.isAdEnable,
+            onDismiss ={
+                onDone()
+            },
+            onFail = {
+                onDone()
+            }
+        )
     }
 
 }

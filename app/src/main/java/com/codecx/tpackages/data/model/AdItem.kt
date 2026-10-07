@@ -1,0 +1,15 @@
+package com.codecx.tpackages.data.model
+
+import com.google.gson.annotations.SerializedName
+
+
+data class AdItem(
+    @SerializedName("id")
+    val adId: String = "",
+    @SerializedName("isEnable")
+    val isAdEnable: Boolean = true,
+    @SerializedName("adFormat")
+    val adFormat: String = "",
+    @SerializedName("adType")
+    val adType: Int = 0,
+)

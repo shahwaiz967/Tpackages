@@ -14,6 +14,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.codecx.tpackages.R
+import com.codecx.tpackages.data.ads.utils.bindNative
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.databinding.FragmentSimInfoBinding
 import com.codecx.tpackages.features.base.BaseFragment
 
@@ -33,6 +35,11 @@ class SimInfoFragment : BaseFragment<FragmentSimInfoBinding>() {
             findNavController().popBackStack()
         }
         checkPermission()
+        bindNative(
+            RemoteConfigHelper.adIds.simInfoNative,
+            false,
+            binding.adBottomLayout
+        )
     }
 
     private fun checkPermission() {

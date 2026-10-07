@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codecx.tpackages.R
+import com.codecx.tpackages.data.ads.utils.bindNative
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.databinding.FragmentDataUsageBinding
 import com.codecx.tpackages.features.adapter.DataUsageAdapter
 import com.codecx.tpackages.features.base.BaseFragment
@@ -44,6 +46,12 @@ class DataUsageFragment : BaseFragment<FragmentDataUsageBinding>() {
             binding.tvTotalWifi.text = "$totalWifiData MB"
         }
         viewModel.fetchDataUsage()
+
+        bindNative(
+            RemoteConfigHelper.adIds.dataUsageNative,
+            false,
+            binding.adBottomLayout
+        )
     }
 
 }

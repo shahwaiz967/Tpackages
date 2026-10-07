@@ -9,5 +9,20 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="RoundMediaTen">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+    <style name="RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:minHeight">@dimen/_7sdp</item>
+        <item name="android:maxHeight">@dimen/_7sdp</item>
+        <item name="colorControlNormal">#BCBCBC</item>
+        <item name="colorControlActivated">#FFD600</item>
+    </style>
+
     <style name="Theme.TPackages" parent="Base.Theme.TPackages" />
 </resources>

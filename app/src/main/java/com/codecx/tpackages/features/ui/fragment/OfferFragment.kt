@@ -14,7 +14,9 @@ import com.codecx.tpackages.features.base.BaseFragment
 
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.codecx.tpackages.data.ads.utils.bindNative
 import com.codecx.tpackages.data.utils.OfferPackages
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.data.utils.handleActivation
 import com.codecx.tpackages.features.adapter.OffersAdapter
 import kotlin.collections.forEach
@@ -62,6 +64,12 @@ class OfferFragment : BaseFragment<FragmentOfferBinding>() {
             else -> "International Offers"
         }
         setupTabs()
+
+        bindNative(
+            RemoteConfigHelper.adIds.offerNative,
+            false,
+            binding.adBottomLayout
+        )
     }
 
     private fun setupRecyclerView() {

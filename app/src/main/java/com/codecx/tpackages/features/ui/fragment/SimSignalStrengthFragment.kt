@@ -23,6 +23,8 @@ import androidx.annotation.RequiresPermission
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.codecx.tpackages.R
+import com.codecx.tpackages.data.ads.utils.bindNative
+import com.codecx.tpackages.data.utils.RemoteConfigHelper
 import com.codecx.tpackages.databinding.FragmentSimSignalStrengthBinding
 import com.codecx.tpackages.features.base.BaseFragment
 
@@ -44,6 +46,11 @@ class SimSignalStrengthFragment : BaseFragment<FragmentSimSignalStrengthBinding>
             findNavController().popBackStack()
         }
         checkAndRequestPermissions()
+        bindNative(
+            RemoteConfigHelper.adIds.simSignalNative,
+            false,
+            binding.adBottomLayout
+        )
 
     }
 
