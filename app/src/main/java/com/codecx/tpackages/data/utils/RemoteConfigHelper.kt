@@ -85,34 +85,34 @@ object RemoteConfigHelper {
     fun getDefaultAdIds(): RemoteAdsConfig {
         return RemoteAdsConfig(
 
-            resumeAppOpen = AdItem(BuildConfig.app_open_id, true, OPEN_AD_TYPE),
-            splashInterAd = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
+            resumeAppOpen = AdItem(BuildConfig.app_open_id, adFormat =  OPEN_AD_TYPE),
+            splashInterAd = AdItem(BuildConfig.inter_id, adFormat =  INTER_AD_TYPE),
 
             homeFirstClick = true, adFrequency = 3,
-            homeTopNative = AdItem(BuildConfig.advance_native_id, true, NATIVE_AD_TYPE),
-            homeInter = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
+            homeTopNative = AdItem(BuildConfig.advance_native_id, adFormat =  NATIVE_AD_TYPE),
+            homeInter = AdItem(BuildConfig.inter_id, adFormat =  INTER_AD_TYPE),
             homeMiddleNative = AdItem(BuildConfig.advance_native_id,true,NATIVE_AD_TYPE),
 
 
-            homeBottomBanner = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
-            offerBanner = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            homeBottomBanner = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
+            offerBanner = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
 
-            offerInter = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
+            offerInter = AdItem(BuildConfig.inter_id, adFormat =  INTER_AD_TYPE),
             offerNative = AdItem(BuildConfig.advance_native_id,true,NATIVE_AD_TYPE),
 
 
-            deviceNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
-            quickToolNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            deviceNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
+            quickToolNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
 
-            fourGNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
-            fourGInter = AdItem(BuildConfig.inter_id, true, INTER_AD_TYPE),
+            fourGNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
+            fourGInter = AdItem(BuildConfig.inter_id, adFormat =  INTER_AD_TYPE),
 
-            simSignalNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
-            simInfoNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
-            dataUsageNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
-            lteNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE),
+            simSignalNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
+            simInfoNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
+            dataUsageNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
+            lteNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE),
 
-            speedTestNative = AdItem(BuildConfig.banner_id, true, COLLAPSIBLE_AD_TYPE)
+            speedTestNative = AdItem(BuildConfig.banner_id, adFormat =  COLLAPSIBLE_AD_TYPE)
             )
     }
 }
