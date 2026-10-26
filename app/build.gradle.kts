@@ -118,6 +118,13 @@ dependencies {
     implementation(libs.firebase.config)
 
     implementation(libs.androidx.lifecycle.process)
+
+    //Facebook Mediation
+    implementation(libs.facebook){
+        exclude(group = "com.google.android.gms", module = "play-services-ads-api")
+        exclude(group = "com.google.android.gms", module = "play-services-ads")
+    }
+
 }
 androidComponents {
     beforeVariants(selector().all()) { variantBuilder ->
