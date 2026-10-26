@@ -26,8 +26,8 @@ android {
         applicationId = "com.arsalhub.paktpackages"
         minSdk = 24
         targetSdk = 36
-        versionCode = 2
-        versionName = "2.0"
+        versionCode = 3
+        versionName = "3.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -120,11 +120,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.process)
 
     //Facebook Mediation
-    implementation(libs.facebook){
+    implementation(libs.facebook) {
         exclude(group = "com.google.android.gms", module = "play-services-ads-api")
         exclude(group = "com.google.android.gms", module = "play-services-ads")
     }
-
+    
 }
 androidComponents {
     beforeVariants(selector().all()) { variantBuilder ->
